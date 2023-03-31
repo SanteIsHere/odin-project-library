@@ -1,0 +1,76 @@
+#books {
+    /* The book container div */
+    display: flex;
+    gap: 30px;
+}
+
+.book_card {
+    /* All book cards will be styled based on this class rule */
+    margin: 10px;
+    border-radius: 10px;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-style: solid;
+    padding: 160px;
+    box-shadow: 0px 0px 5px gray;
+    /* position: absolute;
+    top: 100; */
+}
+
+#addBook {
+    /* "NEW BOOK" button style */
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    height: 40px;
+}
+
+#addBookContainer {
+    /* Container div for "NEW BOOK" button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#delBook {
+    /* Button style for "REMOVE BOOK" button */
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+}
+
+#form-cont {
+    padding: 15px;
+    width: fit-content;
+    background-color: gainsboro;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#book_submission {
+    /* The submission form for new books */
+    display: grid;
+    /* flex-direction: column; */
+    gap: 10px;
+    grid-template-areas: "Quad1 Quad2"
+    "Quad3 Quad4";
+}
+
+#Book Title {
+    grid-area: Quad1;
+}
+
+#Book Author {
+    grid-area: Quad2;
+}
+
+#Book Pages {
+    grid-area: Quad3;
+}
+
+#Book Read Status {
+    grid-area: Quad4;
+    align-items: flex-start;
+}
