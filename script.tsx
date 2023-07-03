@@ -1,6 +1,13 @@
 let myLibrary = ["FooBar"];
 const addBookButton = document.getElementById("addBook")
 const bookContainer = document.getElementById("books")
+const formContainer = document.getElementById("form-cont")
+const form = document.getElementById("book_submission")
+
+// console.log(form)
+
+// Hide the form for now
+formContainer.style.display = "none"
 
 // Define the "Book" object constructor
 function Book(title) {
@@ -20,6 +27,12 @@ function addToLibrary() {
     */
     let title = prompt("What is the book title?")
     let bookCard = document.createElement("div");
+
+    let formValues = await getBookDetails(form);
+
+    console.log(formValues)
+
+    formContainer.style.display = ""
     
     bookCard.classList.add("book_card");
     bookCard.textContent = title;
@@ -30,15 +43,15 @@ function addToLibrary() {
     delBook.textContent = "REMOVE BOOK"
     
     bookCard.appendChild(delBook)
-    bookContainer.appendChild(bookCard);
+    bookContainer?.appendChild(bookCard);
 
     delBook.addEventListener("click", removeFromLibrary)
 }
 
 function removeFromLibrary(node) {
-    console.log(bookContainer.childNodes)
+    console.log(bookContainer?.childNodes)
     console.log(node.textContent)
-    bookContainer.removeChild(node)
+    bookContainer?.removeChild(node)
 }
 
 addBookButton?.addEventListener("click", addToLibrary)
